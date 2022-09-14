@@ -7,16 +7,24 @@ typedef int bool;
 #define false 0
 
 bool isPremier(int x);
-int dividedby(int a , int b);
+int  dividedby(int a , int b);
 
 
 int main(){
 	int n , m;
 	printf("------------------Challenge 4-----------------------\n");
-	printf("donnez le premier nombre :");
+	here:
+	printf("donnez le premier nombre (un nombre PREMIER):");
 	scanf("%d",&n);
+	if(isPremier(n)== false){
+		  goto here;
+	}
+	there:
 	printf("\ndonnez le deuxieme nombre (positif):");
 	scanf("%d",&m);
+	if(m<=0){
+		goto there;
+	}
 	printf("le resultat du division de %d sur %d est %d \n ",n,m,dividedby(n,m));
 	
 	if (isPremier(dividedby(n,m))==true){
@@ -45,7 +53,6 @@ bool isPremier(int x ){
 
 
 int dividedby(int a , int b){
-	if(b!=0 && a>=b){
-	return a/b;}
+	return a/b;
 	
 }
